@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\musiClone;
+use App\Http\Controllers\musiCloneInicial;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +20,5 @@ Route::get('/', function () {
 });
 
 Route::get('/musiClone', [musiClone::class, 'exibirResultados']);
+
+Route::get('/musiCloneInicial', [musiCloneInicial::class, 'exibirResultados']);

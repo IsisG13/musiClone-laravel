@@ -12,21 +12,33 @@
             background-color: aliceblue;
         }
 
+        h1 {
+            text-align: center;
+            margin-bottom: 5%;
+        }
+
         h3 {
             text-align: center;
         }
 
         .usuarios {
-            text-align: center
+            display: flex;
+            text-align: center;
+            flex-wrap: wrap;
         }
 
         .card-user {
-            background-color: #e4e9ee;
+            display: flex;
+            align-items: center;
+            margin-bottom: 2%;
+            background-color: #d8e6f2;
+            border: 1px solid #c7c7c7;
             border-radius: 17px;
-            width: 50%;
+            width: 40%;
             height: 140px;
             text-align: center;
-            margin-left: 25%;
+            margin-left: 7%;
+            padding: 0%;
         }
 
         .card-user p {
@@ -41,29 +53,28 @@
         }
 
         .card-planos {
-            background-color: #e9edf2;
+            background-color: #bbd8f2;
+            border: 1px solid #b7b3b3;
             border-radius: 16px;
             width: 195px;
             height: 510px;
             margin-left: 2%;
         }
 
-        .card-planos p {}
-
-        .seguindo {
-            text-align: center;
-            display: flex;
-            justify-content: flex-start;
-            margin-left: 41%;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
         .card-seguindo {
-            text-align: center;
+            width: 91%;
+            margin-left: 3%;
         }
 
-        .card-seguindo p {}
+        .card-seguindo p {
+            background-color: #a6ccf8;
+            border: 1px solid #939393;
+            height: 53px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding-left: 11%;
+        }
     </style>
 </head>
 
@@ -75,9 +86,7 @@
         <div class="usuarios">
             @foreach ($resultados1 as $resultado1)
                 <div class="card-user">
-                    <p>
-                        {{ $resultado1->usuario_id }} -
-                        {{ $resultado1->nome }} -
+                    <p> {{ $resultado1->nome }} -
                         {{ $resultado1->idade }} anos <br />
                         Possui um plano {{ $resultado1->plano }} -
                         Assinou em: {{ $resultado1->data_assinatura }}
